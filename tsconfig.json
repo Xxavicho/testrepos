@@ -1,0 +1,16 @@
+{
+  "extends": "@kushki/tsconfig",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "handler/*": ["src/handler/*"],
+      "constant/*": ["src/constant/*"],
+      "gateway/*": ["src/gateway/*"],
+      "infrastructure/*": ["src/infrastructure/*"],
+      "repository/*": ["src/repository/*"],
+      "service/*": ["src/service/*"],
+      "types/*": ["types/*"]
+    }
+  }
+}
