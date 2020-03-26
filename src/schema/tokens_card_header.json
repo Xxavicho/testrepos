@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/TokensCardHeader",
+  "title": "TokensCardHeader",
+  "properties": {
+    "PUBLIC-MERCHANT-ID": {
+      "type": "string",
+      "pattern": "^[0-9]{20,32}$"
+    }
+  },
+  "required": ["PUBLIC-MERCHANT-ID"],
+  "type": "object"
+}

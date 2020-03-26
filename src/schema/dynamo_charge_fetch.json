@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/DynamoChargeFetch",
+  "title": "DynamoChargeFetch",
+  "type": "object",
+  "oneOf": [
+    {
+      "properties": {
+        "ticketNumber": {
+          "type": "string"
+        },
+        "transactionId": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "months": {
+          "type": "string"
+        }
+      },
+      "required": ["transactionId", "token"]
+    },
+    {
+      "properties": {
+        "ticketNumber": {
+          "type": "string"
+        },
+        "transactionId": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "deferred": {
+          "type": "object",
+          "properties": {
+            "graceMonths": {
+              "type": "string"
+            },
+            "creditType": {
+              "type": "string"
+            },
+            "months": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": ["transactionId", "token", "deferred"]
+    }
+  ]
+}

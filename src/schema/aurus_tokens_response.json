@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/AurusTokensResponse",
+  "title": "AurusTokensResponse",
+  "properties": {
+    "response_code": {
+      "type": "string",
+      "pattern": "^[0-9]{3}$"
+    },
+    "response_text": {
+      "type": "string"
+    },
+    "transaction_token": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]{32}$"
+    },
+    "transaction_token_validity": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "response_text",
+    "response_code",
+    "transaction_token_validity",
+    "transaction_token"
+  ],
+  "type": "object"
+}

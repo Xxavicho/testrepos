@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/AurusResponse",
+  "title": "AurusResponse",
+  "properties": {
+    "response_code": {
+      "type": "string",
+      "pattern": "^[0-9]{3,4}$"
+    },
+    "response_text": {
+      "type": "string"
+    },
+    "ticket_number": {
+      "type": "string",
+      "pattern": "^[0-9]{10,18}$"
+    },
+    "approved_amount": {
+      "type": "string"
+    },
+    "transaction_id": {
+      "type": "string"
+    },
+    "transaction_reference": {
+      "type": "string"
+    },
+    "recap": {
+      "type": "string"
+    },
+    "transaction_details": {
+      "id": "TransactionDetails",
+      "title": "TransactionDetails",
+      "type": "object",
+      "required": [
+        "cardHolderName",
+        "lastFourDigitsOfCard",
+        "cardType",
+        "binCard",
+        "processorName",
+        "processorBankName",
+        "isDeferred",
+        "merchantName",
+        "approvalCode"
+      ],
+      "properties": {
+        "approvalCode": {
+          "type": "string"
+        },
+        "cardHolderName": {
+          "type": "string"
+        },
+        "lastFourDigitsOfCard": {
+          "type": "string"
+        },
+        "cardType": {
+          "type": "string"
+        },
+        "conciliationId": {
+          "type": "string"
+        },
+        "binCard": {
+          "type": "string"
+        },
+        "processorName": {
+          "type": "string"
+        },
+        "processorBankName": {
+          "type": "string"
+        },
+        "isDeferred": {
+          "type": "string"
+        },
+        "merchantName": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "response_text",
+    "response_code",
+    "approved_amount",
+    "ticket_number",
+    "transaction_id",
+    "transaction_details",
+    "transaction_reference",
+    "recap"
+  ]
+}

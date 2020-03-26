@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/BinParameters",
+  "title": "BinParameters",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["binNumber"],
+  "properties": {
+    "binNumber": {
+      "type": "string",
+      "pattern": "[0-9]{6}"
+    }
+  }
+}

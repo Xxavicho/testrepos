@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/VoidCardResponse",
+  "title": "VoidCardResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "$ref": "src/schema/charges_card_response.json",
+  "required": ["ticketNumber"]
+}

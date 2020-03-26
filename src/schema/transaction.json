@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/Transaction",
+  "title": "Transaction",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "ticket_number": {
+      "type": "string",
+      "pattern": "^[0-9]{10,18}$"
+    },
+    "token": {
+      "type": "string"
+    },
+    "bin_card": {
+      "type": "string"
+    },
+    "buy_order": {
+      "type": "string"
+    },
+    "transaction_id": {
+      "type": "string"
+    },
+    "transaction_reference": {
+      "type": "string"
+    },
+    "currency_code": {
+      "type": "string"
+    },
+    "taxes": {
+      "type": "object"
+    },
+    "transaction_type": {
+      "type": "string"
+    },
+    "card_holder_name": {
+      "type": "string"
+    },
+    "number_of_months": {
+      "type": "integer"
+    },
+    "processor_id": {
+      "type": "string"
+    },
+    "merchant_id": {
+      "type": "string"
+    },
+    "payment_brand": {
+      "type": "string"
+    },
+    "last_four_digits": {
+      "type": "string"
+    },
+    "created": {
+      "type": "number"
+    },
+    "request_amount": {
+      "type": "number"
+    },
+    "approved_transaction_amount": {
+      "type": "number"
+    },
+    "approval_code": {
+      "type": "string"
+    },
+    "subtotal_iva": {
+      "type": "number"
+    },
+    "subtotal_iva0": {
+      "type": "number"
+    },
+    "iva_value": {
+      "type": "number"
+    },
+    "ice_value": {
+      "type": "number"
+    },
+    "transaction_status": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "merchant_name": {
+      "type": "string"
+    },
+    "subscription_metadata": {
+      "type": "object"
+    },
+    "subscription_id": {
+      "type": "string"
+    },
+    "response_code": {
+      "type": "string"
+    },
+    "response_text": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    },
+    "sync_mode": {
+      "enum": ["api", "file", "online"]
+    },
+    "sale_ticket_number": {
+      "type": "string"
+    },
+    "processor_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "contactPerson": {
+      "type": "string"
+    },
+    "processor_merchant_id": {
+      "type": "string"
+    },
+    "security": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "service": {
+          "type": "string"
+        }
+      }
+    },
+    "processor_bank_name": {
+      "type": "string"
+    },
+    "recap": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string"
+    },
+    "issuing_bank": {
+      "type": "string"
+    },
+    "contact_details": {
+      "type": "object",
+      "properties": {
+        "document_number": {
+          "type": "string"
+        },
+        "document_type": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        }
+      }
+    },
+    "pendingAmount": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "ticket_number",
+    "transaction_id",
+    "currency_code",
+    "transaction_type",
+    "merchant_id",
+    "merchant_name",
+    "payment_brand",
+    "last_four_digits",
+    "created",
+    "request_amount",
+    "approved_transaction_amount",
+    "approval_code",
+    "subtotal_iva",
+    "subtotal_iva0",
+    "iva_value",
+    "transaction_status",
+    "card_holder_name",
+    "bin_card",
+    "sync_mode",
+    "processor_id",
+    "processor_name",
+    "processor_bank_name",
+    "recap"
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/ChargesCardRequest",
+  "title": "ChargesCardRequest",
+  "definitions": {
+    "currency": {
+      "type": "string",
+      "enum": ["USD", "COP", "PEN", "CLP", "UF", "MXN"]
+    },
+    "extraTaxes": {
+      "properties": {
+        "agenciaDeViaje": {
+          "type": "number",
+          "minimum": 0
+        },
+        "iac": {
+          "type": "number",
+          "minimum": 0
+        },
+        "propina": {
+          "type": "number",
+          "minimum": 0
+        },
+        "tasaAeroportuaria": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "type": "object"
+    },
+    "ice": {
+      "type": "number",
+      "minimum": 0
+    },
+    "iva": {
+      "type": "number",
+      "minimum": 0
+    },
+    "subtotalIva": {
+      "type": "number",
+      "minimum": 0
+    },
+    "subtotalIva0": {
+      "type": "number",
+      "minimum": 0
+    },
+    "metadata": {
+      "properties": {},
+      "type": "object"
+    },
+    "months": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 48
+    },
+    "token": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]{32}$"
+    }
+  },
+  "properties": {
+    "amount": {
+      "properties": {
+        "ice": { "$ref": "#/definitions/ice" },
+        "iva": { "$ref": "#/definitions/iva" },
+        "subtotalIva": { "$ref": "#/definitions/subtotalIva" },
+        "subtotalIva0": { "$ref": "#/definitions/subtotalIva0" },
+        "currency": { "$ref": "#/definitions/currency" },
+        "extraTaxes": { "$ref": "#/definitions/extraTaxes" }
+      },
+      "required": ["iva", "subtotalIva", "subtotalIva0"]
+    },
+    "months": { "$ref": "#/definitions/months" },
+    "deferred": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "graceMonths": {
+          "type": "string",
+          "pattern": "^[0-9]{1,2}$"
+        },
+        "creditType": {
+          "type": "string",
+          "pattern": "^[0-9]{1,3}$"
+        },
+        "months": { "$ref": "#/definitions/months" }
+      },
+      "required": ["graceMonths", "creditType", "months"]
+    },
+    "metadata": { "$ref": "#/definitions/metadata" },
+    "token": { "$ref": "#/definitions/token" },
+    "contactDetails": {
+      "type": "object",
+      "properties": {
+        "documentNumber": {
+          "type": "string"
+        },
+        "documentType": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "partners": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "required": ["amount", "merchantId"],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "required": ["subtotalIva", "subtotalIva0", "iva", "currency"],
+            "type": "object",
+            "properties": {
+              "subtotalIva": {
+                "type": "number",
+                "minimum": 0
+              },
+              "subtotalIva0": {
+                "type": "number",
+                "minimum": 0
+              },
+              "iva": {
+                "type": "number",
+                "minimum": 0
+              },
+              "ice": {
+                "type": "number",
+                "minimum": 0
+              },
+              "currency": {
+                "type": "string",
+                "enum": ["USD", "COP", "PEN", "CLP", "UF", "MXN"]
+              }
+            }
+          },
+          "merchantId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "fullResponse": {
+      "type": "boolean"
+    },
+    "channel": {
+      "type": "string"
+    },
+    "ignoreWarnings": {
+      "type": "boolean"
+    }
+  },
+  "required": ["token", "amount"],
+  "type": "object"
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/AurusAmount",
+  "title": "AurusAmount",
+  "definitions": {
+    "aurusTax": {
+      "id": "AurusTax",
+      "title": "AurusTax",
+      "additionalProperties": false,
+      "properties": {
+        "taxId": {
+          "type": "string"
+        },
+        "taxName": {
+          "type": "string"
+        },
+        "taxAmount": {
+          "type": "string"
+        }
+      },
+      "required": ["taxId", "taxName", "taxAmount"],
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "ICE": {
+      "type": "string"
+    },
+    "IVA": {
+      "type": "string"
+    },
+    "Subtotal_IVA": {
+      "type": "string"
+    },
+    "Subtotal_IVA0": {
+      "type": "string"
+    },
+    "tax": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/aurusTax"
+      }
+    },
+    "Total_amount": {
+      "type": "string"
+    }
+  },
+  "required": ["Subtotal_IVA0", "IVA", "Subtotal_IVA", "Total_amount"],
+  "type": "object"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/WebhookPayload",
+  "title": "WebhookPayload",
+  "type": "object",
+  "properties": {
+    "transaction": { "$ref": "src/schema/transaction.json" },
+    "webhookSignature": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "required": ["transaction", "webhookSignature", "url"]
+}

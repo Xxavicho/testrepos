@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/VoidCardPath",
+  "title": "VoidCardPath",
+  "additionalProperties": false,
+  "properties": {
+    "ticketNumber": {
+      "type": "string",
+      "pattern": "^[0-9]{10,20}$"
+    }
+  },
+  "required": ["ticketNumber"],
+  "type": "object"
+}

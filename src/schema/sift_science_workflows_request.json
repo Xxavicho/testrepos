@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/SiftScienceWorkflowsRequest",
+  "title": "SiftScienceWorkflowsRequest",
+  "type": "object",
+  "properties": {
+    "$type": {
+      "type": "string",
+      "pattern": "$create_order"
+    },
+    "$api_key": {
+      "type": "string"
+    },
+    "$user_id": {
+      "type": "string"
+    }
+  },
+  "required": ["$type", "$api_key", "$user_id"]
+}

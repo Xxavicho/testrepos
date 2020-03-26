@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/SiftScienceDecisionResponse",
+  "title": "SiftScienceDecisionResponse",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string"
+    },
+    "show_in_entity_bar": {
+      "type": "boolean"
+    },
+    "abuse_type": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "number"
+    },
+    "created_by": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        }
+      }
+    },
+    "last_updated_at": {
+      "type": "number"
+    },
+    "last_updated_by": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        }
+      }
+    },
+    "state": {
+      "type": "string"
+    }
+  },
+  "required": ["id", "name", "description", "type"]
+}

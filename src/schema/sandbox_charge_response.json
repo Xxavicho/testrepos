@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/SandboxTokensResponse",
+  "title": "SandboxChargeResponse",
+  "properties": {
+    "body": {
+      "$ref": "src/schema/aurus_response.json"
+    }
+  },
+  "required": ["body"],
+  "type": "object"
+}

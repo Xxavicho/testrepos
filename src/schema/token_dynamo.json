@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/TokenDynamo",
+  "title": "TokenDynamo",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "merchantId": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "bin": {
+      "type": "string"
+    },
+    "created": {
+      "type": "number"
+    },
+    "cardHolderName": {
+      "type": "string"
+    },
+    "sessionId": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "lastFourDigits": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "binInfo": {
+      "$ref": "https://s3.amazonaws.com/kushki-static/schemas/usrv-card/v1.2/dynamo_bin_fetch.json"
+    },
+    "maskedCardNumber": {
+      "type": "string"
+    },
+    "ip": {
+      "type": "string"
+    },
+    "secureId": {
+      "type": "string"
+    },
+    "secureService": {
+      "type": "string"
+    },
+    "transactionReference": {
+      "type": "string"
+    },
+    "settlement": {
+      "type": "number"
+    },
+    "isDeferred": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "merchantId",
+    "bin",
+    "created",
+    "lastFourDigits",
+    "amount",
+    "maskedCardNumber",
+    "transactionReference"
+  ],
+  "type": "object"
+}

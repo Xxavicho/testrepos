@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/CaptureCardRequest",
+  "title": "CaptureCardRequest",
+  "definitions": {
+    "currency": {
+      "type": "string",
+      "enum": ["USD", "COP", "PEN", "CLP", "UF", "MXN"]
+    },
+    "extraTaxes": {
+      "properties": {
+        "agenciaDeViaje": {
+          "type": "number",
+          "minimum": 0
+        },
+        "iac": {
+          "type": "number",
+          "minimum": 0
+        },
+        "propina": {
+          "type": "number",
+          "minimum": 0
+        },
+        "tasaAeroportuaria": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "type": "object"
+    },
+    "ice": {
+      "type": "number",
+      "minimum": 0
+    },
+    "iva": {
+      "type": "number",
+      "minimum": 0
+    },
+    "subtotalIva": {
+      "type": "number",
+      "minimum": 0
+    },
+    "subtotalIva0": {
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "properties": {
+    "metadata": {
+      "properties": {},
+      "type": "object"
+    },
+    "ticketNumber": {
+      "type": "string"
+    },
+    "amount": {
+      "properties": {
+        "ice": {
+          "$ref": "#/definitions/ice"
+        },
+        "iva": {
+          "$ref": "#/definitions/iva"
+        },
+        "subtotalIva": {
+          "$ref": "#/definitions/subtotalIva"
+        },
+        "subtotalIva0": {
+          "$ref": "#/definitions/subtotalIva0"
+        },
+        "currency": {
+          "$ref": "#/definitions/currency"
+        },
+        "extraTaxes": {
+          "$ref": "#/definitions/extraTaxes"
+        }
+      },
+      "required": ["iva", "subtotalIva", "subtotalIva0"]
+    },
+    "fullResponse": {
+      "type": "boolean"
+    }
+  },
+  "required": ["ticketNumber"],
+  "type": "object"
+}

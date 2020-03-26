@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/Tax",
+  "title": "Tax",
+  "properties": {
+    "taxId": {
+      "type": "string"
+    },
+    "taxName": {
+      "type": "string"
+    },
+    "taxAmount": {
+      "type": "string"
+    }
+  },
+  "required": ["taxId", "taxName", "taxAmount"],
+  "type": "object"
+}

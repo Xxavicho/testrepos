@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/AurusTokensRequest",
+  "title": "AurusTokensRequest",
+  "properties": {
+    "amount": {
+      "type": "string"
+    },
+    "card": {
+      "properties": {
+        "card_present": {
+          "type": "string"
+        },
+        "cvv": {
+          "type": "string"
+        },
+        "expiry_month": {
+          "type": "string"
+        },
+        "expiry_year": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "number": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "number",
+        "expiry_year",
+        "expiry_month",
+        "card_present"
+      ],
+      "type": "object"
+    },
+    "currency_code": {
+      "type": "string"
+    },
+    "deferred_payment": {
+      "type": "string"
+    },
+    "language_indicator": {
+      "type": "string"
+    },
+    "merchant_identifier": {
+      "type": "string"
+    },
+    "remember_me": {
+      "type": "string"
+    },
+    "token_type": {
+      "type": "string"
+    },
+    "EmailId": {
+      "type": "string",
+      "format": "email"
+    }
+  },
+  "required": [
+    "remember_me",
+    "language_indicator",
+    "deferred_payment",
+    "merchant_identifier",
+    "token_type",
+    "currency_code",
+    "card"
+  ],
+  "type": "object"
+}

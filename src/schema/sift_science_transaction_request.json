@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/SiftScienceTransactionRequest",
+  "title": "SiftScienceTransactionRequest",
+  "properties": {
+    "$type": {
+      "type": "string",
+      "pattern": "$create_order"
+    },
+    "$api_key": {
+      "type": "string"
+    },
+    "$user_id": {
+      "type": "string"
+    },
+    "$amount": {
+      "type": "number"
+    },
+    "$currency_code": {
+      "type": "string"
+    },
+    "$order_id": {
+      "type": "string"
+    },
+    "$user_email": {
+      "type": "string"
+    },
+    "$transaction_type": {
+      "type": "string"
+    },
+    "$transaction_status": {
+      "type": "string"
+    },
+    "$session_id": {
+      "type": "string"
+    },
+    "$billing_address": {
+      "type": "object",
+      "properties": {
+        "$name": {
+          "type": "string"
+        },
+        "$phone": {
+          "type": "string"
+        },
+        "$address_1": {
+          "type": "string"
+        },
+        "$address_2": {
+          "type": "string"
+        },
+        "$city": {
+          "type": "string"
+        },
+        "$region": {
+          "type": "string"
+        },
+        "$country": {
+          "type": "string"
+        },
+        "$zipcode": {
+          "type": "string"
+        }
+      },
+      "required": []
+    },
+    "$payment_method": {
+      "items": {
+        "properties": {
+          "$payment_type": {
+            "type": "string"
+          },
+          "$payment_gateway": {
+            "type": "string"
+          },
+          "$card_bin": {
+            "type": "string"
+          },
+          "$card_last4": {
+            "type": "string"
+          }
+        }
+      },
+      "type": "array",
+      "minItems": 0
+    },
+    "$shipping_address": {
+      "type": "object",
+      "properties": {
+        "$name": {
+          "type": "string"
+        },
+        "$phone": {
+          "type": "string"
+        },
+        "$address_1": {
+          "type": "string"
+        },
+        "$address_2": {
+          "type": "string"
+        },
+        "$city": {
+          "type": "string"
+        },
+        "$region": {
+          "type": "string"
+        },
+        "$country": {
+          "type": "string"
+        },
+        "$zipcode": {
+          "type": "string"
+        }
+      },
+      "required": []
+    },
+    "$seller_user_id": {
+      "type": "string"
+    }
+  },
+  "required": ["$api_key", "$user_id", "$type", "$amount", "$currency_code"]
+}

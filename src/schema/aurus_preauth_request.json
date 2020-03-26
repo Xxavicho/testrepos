@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/AurusPreAuthRequest",
+  "title": "AurusPreAuthRequest",
+  "definitions": {
+    "transaction_amount": {
+      "properties": {
+        "ICE": {
+          "type": "string"
+        },
+        "IVA": {
+          "type": "string"
+        },
+        "Subtotal_IVA": {
+          "type": "string"
+        },
+        "Subtotal_IVA0": {
+          "type": "string"
+        },
+        "tax": {
+          "type": "object"
+        },
+        "Total_amount": {
+          "type": "string"
+        }
+      },
+      "required": ["Subtotal_IVA0", "IVA", "Subtotal_IVA"],
+      "type": "object"
+    }
+  },
+  "properties": {
+    "currency_code": {
+      "type": "string",
+      "enum": ["USD", "COP", "PEN", "CLP", "UF", "MXN"]
+    },
+    "language_indicator": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "fingerprint": {
+      "type": "string"
+    },
+    "merchant_identifier": {
+      "type": "string"
+    },
+    "transaction_amount": { "$ref": "#/definitions/transaction_amount" },
+    "transaction_token": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]{32}$"
+    }
+  },
+  "required": [
+    "transaction_amount",
+    "transaction_token",
+    "currency_code",
+    "language_indicator",
+    "merchant_identifier"
+  ],
+  "type": "object"
+}

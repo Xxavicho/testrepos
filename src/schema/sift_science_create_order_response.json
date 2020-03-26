@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/SiftScienceCreateOrderResponse",
+  "title": "SiftScienceCreateOrderResponse",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "number"
+    },
+    "error_message": {
+      "type": "string"
+    },
+    "time": {
+      "type": "number"
+    },
+    "request": {
+      "type": "string"
+    },
+    "score_response": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "number"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "scores": {
+          "type": "object",
+          "properties": {
+            "payment_abuse": {
+              "type": "object",
+              "properties": {
+                "score": {
+                  "type": "number"
+                },
+                "reasons": {
+                  "type": "array",
+                  "minItems": 0,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": ["score"]
+            }
+          },
+          "required": ["payment_abuse"]
+        },
+        "user_id": {
+          "type": "string"
+        },
+        "latest_labels": {
+          "type": "object"
+        },
+        "workflow_statuses": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      },
+      "required": ["scores"]
+    }
+  },
+  "required": ["status", "error_message", "time", "request", "score_response"]
+}

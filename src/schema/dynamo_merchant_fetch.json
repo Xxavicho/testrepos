@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/DynamoMerchantFetch",
+  "title": "DynamoMerchantFetch",
+  "description": "",
+  "properties": {
+    "public_id": {
+      "type": "string"
+    },
+    "merchant_name": {
+      "type": "string"
+    },
+    "multi_merchant": {
+      "type": "boolean"
+    },
+    "commission": {
+      "type": "boolean"
+    },
+    "private_id": {
+      "type": "string"
+    },
+    "contactPerson": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "nit": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "sift_science": {
+      "type": "object",
+      "properties": {
+        "SandboxApiKey": {
+          "type": "string"
+        },
+        "ProdApiKey": {
+          "type": "string"
+        },
+        "SiftScore": {
+          "type": "number"
+        },
+        "SandboxAccountId": {
+          "type": "string"
+        },
+        "ProdAccountId": {
+          "type": "string"
+        }
+      }
+    },
+    "deferredOptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "https://s3.amazonaws.com/kushki-static/schemas/usrv-card/v1/deferred_option.json"
+      }
+    },
+    "whiteList": {
+      "type": "string"
+    },
+    "voidWebhookUrl": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "public_id",
+    "private_id",
+    "sift_science",
+    "email",
+    "contactPerson",
+    "merchant_name"
+  ],
+  "type": "object"
+}

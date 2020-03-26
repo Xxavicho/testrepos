@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/ChargesCardResponse",
+  "title": "ChargesCardResponse",
+  "definitions": {
+    "details": {
+      "type": "object",
+      "required": [
+        "paymentBrand",
+        "transactionId",
+        "cardHolderName",
+        "lastFourDigits",
+        "binCard",
+        "processorName",
+        "processorBankName",
+        "transactionType",
+        "merchantName",
+        "approvalCode"
+      ],
+      "properties": {
+        "responseCode": {
+          "type": "string"
+        },
+        "responseText": {
+          "type": "string"
+        },
+        "recap": {
+          "type": "string"
+        },
+        "approvedTransactionAmount": {
+          "type": "number"
+        },
+        "transactionId": {
+          "type": "string"
+        },
+        "transactionReference": {
+          "type": "string"
+        },
+        "approvalCode": {
+          "type": "string"
+        },
+        "cardHolderName": {
+          "type": "string"
+        },
+        "lastFourDigits": {
+          "type": "string"
+        },
+        "binCard": {
+          "type": "string"
+        },
+        "processorName": {
+          "type": "string"
+        },
+        "processorBankName": {
+          "type": "string"
+        },
+        "merchantName": {
+          "type": "string"
+        },
+        "currencyCode": {
+          "type": "string"
+        },
+        "taxes": {
+          "type": "object"
+        },
+        "transactionType": {
+          "type": "string"
+        },
+        "numberOfMonths": {
+          "type": "integer"
+        },
+        "processorId": {
+          "type": "string"
+        },
+        "merchantId": {
+          "type": "string"
+        },
+        "paymentBrand": {
+          "type": "string"
+        },
+        "created": {
+          "type": "number"
+        },
+        "requestAmount": {
+          "type": "number"
+        },
+        "subtotalIva": {
+          "type": "number"
+        },
+        "subtotalIva0": {
+          "type": "number"
+        },
+        "ivaValue": {
+          "type": "number"
+        },
+        "iceValue": {
+          "type": "number"
+        },
+        "transactionStatus": {
+          "type": "string"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "subscriptionMetadata": {
+          "type": "object"
+        },
+        "subscriptionId": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "syncMode": {
+          "enum": ["api", "file", "online"]
+        },
+        "saleTicketNumber": {
+          "type": "string"
+        },
+        "graceMonths": {
+          "type": "string"
+        },
+        "acquirerBank": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "ticketNumber": {
+      "type": "string",
+      "pattern": "^[0-9]{10,18}$"
+    },
+    "details": {
+      "$ref": "#/definitions/details"
+    }
+  },
+  "required": ["ticketNumber"]
+}

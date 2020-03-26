@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/TransactionSNS",
+  "title": "TransactionSNS",
+  "type": "object",
+  "properties": {
+    "token": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]{32}$"
+    },
+    "id": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "ticketNumber": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "object",
+      "properties": {
+        "subtotalIva": {
+          "type": "number",
+          "minimum": 0
+        },
+        "subtotalIva0": {
+          "type": "number",
+          "minimum": 0
+        },
+        "iva": {
+          "type": "number",
+          "minimum": 0
+        },
+        "extraTaxes": {
+          "type": "object",
+          "properties": {
+            "propina": {
+              "type": "number",
+              "minimum": 0
+            },
+            "tasaAeroportuaria": {
+              "type": "number",
+              "minimum": 0
+            },
+            "agenciaDeViajes": {
+              "type": "number",
+              "minimum": 0
+            },
+            "iac": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "required": ["subtotalIva", "subtotalIva0", "iva"]
+    },
+    "created": {
+      "type": "number"
+    },
+    "completedAt": {
+      "type": "number"
+    },
+    "expiration": {
+      "type": "number"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "approval_code": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string",
+      "enum": ["USD", "COP", "PEN", "CLP", "UF", "MXN"]
+    },
+    "email": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "sessionId": {
+      "type": "string"
+    },
+    "merchantId": {
+      "type": "string",
+      "pattern": "^[0-9]{22,32}$"
+    },
+    "responseCode": {
+      "type": "string"
+    },
+    "responseText": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "token",
+    "status",
+    "created",
+    "publicMerchantId",
+    "currency",
+    "description",
+    "ticketNumber"
+  ]
+}

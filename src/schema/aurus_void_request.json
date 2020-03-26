@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/AurusVoidRequest",
+  "title": "AurusVoidRequest",
+  "additionalProperties": false,
+  "properties": {
+    "currency_code": {
+      "type": "string",
+      "enum": ["USD", "COP", "PEN", "CLP", "UF", "MXN"]
+    },
+    "language_indicator": {
+      "type": "string"
+    },
+    "merchant_identifier": {
+      "type": "string"
+    },
+    "transaction_amount": { "$ref": "./src/schema/aurus_amount.json" },
+    "ticket_number": {
+      "type": "string",
+      "pattern": "^[0-9]{12}$"
+    },
+    "transaction_reference": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "language_indicator",
+    "merchant_identifier",
+    "ticket_number",
+    "transaction_reference"
+  ],
+  "type": "object"
+}

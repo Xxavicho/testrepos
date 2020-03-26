@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/AurusChargesRequest",
+  "title": "AurusChargesRequest",
+  "definitions": {
+    "transaction_amount": {
+      "properties": {
+        "ICE": {
+          "type": "string"
+        },
+        "IVA": {
+          "type": "string"
+        },
+        "Subtotal_IVA": {
+          "type": "string"
+        },
+        "Subtotal_IVA0": {
+          "type": "string"
+        },
+        "tax": {
+          "type": "object"
+        },
+        "Total_amount": {
+          "type": "string"
+        }
+      },
+      "required": ["Subtotal_IVA0", "IVA", "Subtotal_IVA"],
+      "type": "object"
+    }
+  },
+  "properties": {
+    "plcc": {
+      "type": "string"
+    },
+    "currency_code": {
+      "type": "string",
+      "enum": ["USD", "COP", "PEN", "CLP", "UF", "MXN"]
+    },
+    "language_indicator": {
+      "type": "string"
+    },
+    "months": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "metadata": {
+      "properties": {},
+      "type": "object"
+    },
+    "merchant_identifier": {
+      "type": "string"
+    },
+    "transaction_amount": { "$ref": "#/definitions/transaction_amount" },
+    "transaction_token": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]{32}$"
+    },
+    "transaction_reference": {
+      "type": "string"
+    },
+    "months-of-grace": {
+      "type": "string"
+    },
+    "type-of-credit": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "fingerprint": {
+      "type": "string"
+    },
+    "processor_code": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "transaction_amount",
+    "transaction_token",
+    "currency_code",
+    "language_indicator",
+    "merchant_identifier",
+    "transaction_reference",
+    "plcc"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,192 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/SiftScienceCreateOrderRequest",
+  "title": "SiftScienceCreateOrderRequest",
+  "type": "object",
+  "properties": {
+    "$type": {
+      "type": "string",
+      "pattern": "$create_order"
+    },
+    "$api_key": {
+      "type": "string"
+    },
+    "$user_id": {
+      "type": "string"
+    },
+    "$session_id": {
+      "type": "string"
+    },
+    "$order_id": {
+      "type": "string"
+    },
+    "$user_email": {
+      "type": "string"
+    },
+    "$amount": {
+      "type": "number"
+    },
+    "$currency_code": {
+      "type": "string"
+    },
+    "$billing_address": {
+      "type": "object",
+      "properties": {
+        "$name": {
+          "type": "string"
+        },
+        "$phone": {
+          "type": "string"
+        },
+        "$address_1": {
+          "type": "string"
+        },
+        "$address_2": {
+          "type": "string"
+        },
+        "$city": {
+          "type": "string"
+        },
+        "$region": {
+          "type": "string"
+        },
+        "$country": {
+          "type": "string"
+        },
+        "$zipcode": {
+          "type": "string"
+        }
+      }
+    },
+    "$payment_methods": {
+      "items": {
+        "type": "object",
+        "properties": {
+          "$payment_type": {
+            "type": "string"
+          },
+          "$payment_gateway": {
+            "type": "string"
+          },
+          "$card_bin": {
+            "type": "string"
+          },
+          "$card_last4": {
+            "type": "string"
+          }
+        }
+      },
+      "type": "array",
+      "minItems": 0
+    },
+    "$shipping_address": {
+      "type": "object",
+      "properties": {
+        "$name": {
+          "type": "string"
+        },
+        "$phone": {
+          "type": "string"
+        },
+        "$address_1": {
+          "type": "string"
+        },
+        "$address_2": {
+          "type": "string"
+        },
+        "$city": {
+          "type": "string"
+        },
+        "$region": {
+          "type": "string"
+        },
+        "$country": {
+          "type": "string"
+        },
+        "$zipcode": {
+          "type": "string"
+        }
+      }
+    },
+    "$expedited_shipping": {
+      "type": "boolean"
+    },
+    "$shipping_method": {
+      "type": "string"
+    },
+    "$items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "$item_id": {
+            "type": "string"
+          },
+          "$product_title": {
+            "type": "string"
+          },
+          "$price": {
+            "type": "number"
+          },
+          "$upc": {
+            "type": "string"
+          },
+          "$sku": {
+            "type": "string"
+          },
+          "$brand": {
+            "type": "string"
+          },
+          "$manufacturer": {
+            "type": "string"
+          },
+          "$category": {
+            "type": "string"
+          },
+          "$quantity": {
+            "type": "number"
+          },
+          "$color": {
+            "type": "string"
+          }
+        },
+        "minItems": 0
+      }
+    },
+    "$seller_user_id": {
+      "type": "string"
+    },
+    "$promotions": {
+      "items": {
+        "properties": {
+          "$promotion_id": {
+            "type": "string"
+          },
+          "$status": {
+            "type": "string"
+          },
+          "$description": {
+            "type": "string"
+          },
+          "$discount": {
+            "type": "object",
+            "properties": {
+              "$amount": {
+                "type": "number"
+              },
+              "$currency_code": {
+                "type": "string"
+              },
+              "$minimum_purchase_amount": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "type": "array",
+        "minItems": 0
+      }
+    }
+  },
+  "required": ["$api_key", "$user_id", "$type"]
+}

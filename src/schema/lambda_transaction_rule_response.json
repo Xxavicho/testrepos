@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/LambdaTransactionRuleResponse",
+  "title": "LambdaTransactionRuleBodyResponse",
+  "description": "",
+  "additionalProperties": false,
+  "properties": {
+    "body": {
+      "title": "LambdaTransactionRuleResponse",
+      "type": "object",
+      "properties": {
+        "processor": {
+          "type": "string"
+        },
+        "publicId": {
+          "type": "string"
+        },
+        "privateId": {
+          "type": "string"
+        },
+        "secureService": {
+          "type": "string"
+        },
+        "secureId": {
+          "type": "string"
+        },
+        "plcc": {
+          "type": "string"
+        },
+        "whiteList": {
+          "type": "string"
+        },
+        "rules": {
+          "type": "object",
+          "properties": {
+            "canIgnoreWarnings": {
+              "type": "boolean"
+            },
+            "rules": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "required": ["processor", "publicId", "privateId"]
+    },
+    "type": "object"
+  },
+  "required": ["body"]
+}

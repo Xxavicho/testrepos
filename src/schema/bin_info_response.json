@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/BinInfoResponse",
+  "title": "BinInfoResponse",
+  "description": "",
+  "additionalProperties": false,
+  "properties": {
+    "number": {
+      "type": "object"
+    },
+    "scheme": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "prepaid": {
+      "type": "boolean"
+    },
+    "country": {
+      "properties": {
+        "numeric": {
+          "type": "string"
+        },
+        "alpha2": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        }
+      }
+    },
+    "bank": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "default": ""
+        },
+        "url": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        }
+      },
+      "required": ["name"]
+    }
+  },
+  "required": ["scheme", "brand"],
+  "type": "object"
+}

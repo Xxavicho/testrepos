@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/AuthorizerContext",
+  "title": "AuthorizerContext",
+  "properties": {
+    "merchantId": {
+      "type": "string"
+    },
+    "publicMerchantId": {
+      "type": "string"
+    },
+    "privateMerchantId": {
+      "type": "string"
+    },
+    "kushkiMetadata": {
+      "$ref": "https://s3.amazonaws.com/kushki-static/schemas/usrv-card/v1.1/kushki_metadata.json"
+    },
+    "credentialId": {
+      "type": "string"
+    },
+    "credentialAlias": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "merchantId",
+    "publicMerchantId",
+    "privateMerchantId",
+    "credentialAlias",
+    "credentialId"
+  ],
+  "type": "object"
+}

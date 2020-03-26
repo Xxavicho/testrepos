@@ -1,0 +1,161 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/TokensCardRequest",
+  "title": "TokensCardRequest",
+  "definitions": {
+    "tokenType": {
+      "type": "string",
+      "enum": ["Mastercard"]
+    },
+    "cardToken": {
+      "properties": {
+        "card": {
+          "properties": {
+            "cvv": {
+              "type": ["string", "null"],
+              "pattern": "^[0-9]{3,4}$"
+            },
+            "expiryMonth": {
+              "type": "string",
+              "pattern": "^(1[0-2]|0[1-9]|[1-9])$"
+            },
+            "expiryYear": {
+              "type": "string",
+              "pattern": "^[1-9][0-9]$"
+            },
+            "name": {
+              "type": "string"
+            },
+            "number": {
+              "type": "string",
+              "pattern": "^[0-9]{14,19}$"
+            }
+          },
+          "required": ["expiryYear", "name", "expiryMonth", "number"],
+          "type": "object"
+        },
+        "currency": {
+          "type": "string",
+          "enum": ["USD", "COP", "PEN", "CLP", "UF", "MXN"]
+        },
+        "isDeferred": {
+          "type": "boolean"
+        },
+        "totalAmount": {
+          "type": "number",
+          "minimum": 0
+        },
+        "rememberMe": {
+          "type": "string",
+          "enum": ["0", "1"]
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "userId": {
+          "type": ["string", "null"],
+          "pattern": "^[a-zA-Z0-9]{16,}$"
+        },
+        "sessionId": {
+          "type": ["string", "null"]
+        },
+        "months": {
+          "type": "integer"
+        },
+        "partners": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "required": ["amount", "merchantId"],
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "amount": {
+                "required": ["subtotalIva", "subtotalIva0", "iva", "currency"],
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "subtotalIva": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "subtotalIva0": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "iva": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "ice": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "currency": {
+                    "type": "string",
+                    "enum": ["USD", "COP", "PEN", "CLP", "UF", "MXN"]
+                  }
+                }
+              },
+              "merchantId": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": ["totalAmount", "card"],
+      "type": "object"
+    },
+    "tokenToken": {
+      "type": "object",
+      "required": ["kind", "token", "totalAmount"],
+      "properties": {
+        "kind": {
+          "$ref": "#/definitions/tokenType"
+        },
+        "token": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string",
+          "enum": ["USD", "COP", "PEN", "CLP", "UF", "MXN"]
+        },
+        "isDeferred": {
+          "type": "boolean"
+        },
+        "totalAmount": {
+          "type": "number",
+          "minimum": 0
+        },
+        "rememberMe": {
+          "type": "string",
+          "enum": ["0", "1"]
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "userId": {
+          "type": ["string", "null"],
+          "pattern": "^[a-zA-Z0-9]{16,}$"
+        },
+        "sessionId": {
+          "type": ["string", "null"]
+        },
+        "months": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/cardToken"
+    },
+    {
+      "$ref": "#/definitions/tokenToken"
+    }
+  ]
+}

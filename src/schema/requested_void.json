@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/RequestedVoid",
+  "title": "RequestedVoid",
+  "definitions": {
+    "amount": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "enum": ["USD", "COP", "PEN", "CLP", "UF", "MXN"]
+        },
+        "subtotalIva": {
+          "type": "number",
+          "minimum": 0
+        },
+        "subtotalIva0": {
+          "type": "number",
+          "minimum": 0
+        },
+        "iva": {
+          "type": "number",
+          "minimum": 0
+        },
+        "ice": {
+          "type": "number",
+          "minimum": 0
+        },
+        "extraTaxes": {
+          "additionalProperties": false,
+          "properties": {
+            "agenciaDeViaje": {
+              "type": "number",
+              "minimum": 0
+            },
+            "iac": {
+              "type": "number",
+              "minimum": 0
+            },
+            "propina": {
+              "type": "number",
+              "minimum": 0
+            },
+            "tasaAeroportuaria": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "type": "object"
+        }
+      },
+      "required": ["currency", "subtotalIva", "subtotalIva0", "iva"]
+    }
+  },
+  "properties": {
+    "transactionId": {
+      "type": "string"
+    },
+    "transactionStatus": {
+      "type": "string"
+    },
+    "transactionType": {
+      "type": "string"
+    },
+    "binCard": {
+      "type": "string"
+    },
+    "created": {
+      "type": "number"
+    },
+    "currencyCode": {
+      "type": "string"
+    },
+    "lastFourDigits": {
+      "type": "string"
+    },
+    "merchantId": {
+      "type": "string"
+    },
+    "merchantName": {
+      "type": "string"
+    },
+    "processorId": {
+      "type": "string"
+    },
+    "processorName": {
+      "type": "string"
+    },
+    "paymentBrand": {
+      "type": "string"
+    },
+    "cardHolderName": {
+      "type": "string"
+    },
+    "amount": { "$ref": "#/definitions/amount" },
+    "subscriptionId": {
+      "type": "string"
+    },
+    "transactionReference": {
+      "type": "string"
+    },
+    "ticketNumber": {
+      "type": "string"
+    },
+    "ivaValue": {
+      "type": "string"
+    },
+    "iceValue": {
+      "type": "string"
+    },
+    "subtotalIva": {
+      "type": "string"
+    },
+    "subtotalIva0": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "transactionId",
+    "ticketNumber",
+    "transactionReference",
+    "transactionStatus",
+    "transactionType",
+    "amount",
+    "paymentBrand",
+    "processorId",
+    "processorName",
+    "merchantId",
+    "merchantName",
+    "currencyCode",
+    "created",
+    "binCard",
+    "lastFourDigits"
+  ],
+  "type": "object"
+}

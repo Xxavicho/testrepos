@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/AurusCaptureRequest",
+  "title": "AurusCaptureRequest",
+  "definitions": {
+    "transaction_amount": {
+      "properties": {
+        "ICE": {
+          "type": "string"
+        },
+        "IVA": {
+          "type": "string"
+        },
+        "Subtotal_IVA": {
+          "type": "string"
+        },
+        "Subtotal_IVA0": {
+          "type": "string"
+        },
+        "tax": {
+          "type": "object"
+        },
+        "Total_amount": {
+          "type": "string"
+        }
+      },
+      "required": ["Subtotal_IVA0", "IVA", "Subtotal_IVA"],
+      "type": "object"
+    }
+  },
+  "type": "object",
+  "required": [
+    "merchant_identifier",
+    "language_indicator",
+    "ticket_number",
+    "currency_code"
+  ],
+  "properties": {
+    "merchant_identifier": {
+      "type": "string"
+    },
+    "language_indicator": {
+      "type": "string"
+    },
+    "ticket_number": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]{32}$"
+    },
+    "currency_code": {
+      "type": "string",
+      "enum": ["USD", "COP", "PEN", "CLP", "UF", "MXN"]
+    },
+    "transaction_amount": {
+      "$ref": "#/definitions/transaction_amount"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/VoidCardRequest",
+  "title": "VoidCardRequest",
+  "additionalProperties": false,
+  "properties": {
+    "amount": {
+      "$ref": "https://s3.amazonaws.com/kushki-static/schemas/usrv-card/v1.2/amount.json"
+    },
+    "fullResponse": {
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/DynamoProcessorFetch",
+  "title": "DynamoProcessorFetch",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "public_id": {
+      "type": "string"
+    },
+    "private_id": {
+      "type": "string"
+    },
+    "merchant_id": {
+      "type": "string"
+    },
+    "processor_name": {
+      "type": "string"
+    },
+    "terminal_id": {
+      "type": "string"
+    },
+    "processor_type": {
+      "type": "string"
+    },
+    "processor_merchant_id": {
+      "type": "string"
+    },
+    "acquirer_bank": {
+      "type": "string"
+    },
+    "unique_code": {
+      "type": "string"
+    },
+    "plcc": {
+      "type": "boolean"
+    },
+    "omitCVV": {
+      "type": "boolean"
+    },
+    "processor_code": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "public_id",
+    "private_id",
+    "merchant_id",
+    "processor_name",
+    "terminal_id",
+    "processor_type"
+  ]
+}

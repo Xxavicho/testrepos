@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://ksh/AurusErrorResponse",
+  "title": "AurusErrorResponse",
+  "properties": {
+    "response_code": {
+      "type": "string",
+      "pattern": "^[0-9]{3,4}$"
+    },
+    "response_text": {
+      "type": "string"
+    }
+  },
+  "required": ["response_text", "response_code"],
+  "type": "object"
+}
