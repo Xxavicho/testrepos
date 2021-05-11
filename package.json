@@ -113,7 +113,7 @@
     "inversify": "5.0.1",
     "inversify-logger-middleware": "3.1.0",
     "jsonpath": "1.0.2",
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "middy": "0.34.0",
     "moment": "2.24.0",
     "moment-timezone": "0.5.28",
