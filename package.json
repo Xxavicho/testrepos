@@ -115,7 +115,7 @@
     "jsonpath": "1.0.2",
     "lodash": "4.17.15",
     "middy": "0.34.0",
-    "moment": "2.24.0",
+    "moment": "2.29.4",
     "moment-timezone": "0.5.28",
     "nano-seconds": "1.2.2",
     "parse-full-name": "1.2.4",
