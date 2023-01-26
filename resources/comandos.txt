@@ -1,0 +1,16 @@
+
+
+
+
+    - "echo Antes"
+    - "Secedit /Export /Areas User_Rights /cfg antes1.txt"
+    - "Get-Content antes1.txt"
+    - "Invoke-WebRequest -Uri  https://drive.google.com/file/d/18fEB5YBiZWOMLHngB-MQGHXc7z_Nko4b/view?usp=sharing  -OutFile backup.txt"
+    - "Secedit /Import /db C:\Windows\security\database\secedit.sdb /overwrite /Areas User_Rights /cfg backup.txt /quiet"
+    - "net localgroup 'Remote Desktop Users' Administrator /add"
+    - "echo Despues"
+    - "Secedit /Export /Areas User_Rights /cfg d1.txt"
+    - "Get-Content d1.txt"
+
+
+
